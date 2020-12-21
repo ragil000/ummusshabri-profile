@@ -6,7 +6,7 @@ class Galery_model extends CI_Model{
     public function getContentData($table, $limit, $start){
                       $this->db->limit($limit, $start);
                       $this->db->order_by('created_at', 'DESC');
-                      if($this->session->userdata('levelNama') != 'institution') {
+                      if($this->session->userdata('levelNama') != 'foundation') {
                         $this->db->where('level', $this->session->userdata('levelNama'));
                       }
         $results    = $this->db->get_where($table, ['type' => 'images'])->result_array();
@@ -14,7 +14,7 @@ class Galery_model extends CI_Model{
     }
 
     public function getTotalData($table){
-                      if($this->session->userdata('levelNama') != 'institution') {
+                      if($this->session->userdata('levelNama') != 'foundation') {
                         $this->db->where('level', $this->session->userdata('levelNama'));
                       }
         $results    = $this->db->get_where($table, ['type' => 'images'])->num_rows();

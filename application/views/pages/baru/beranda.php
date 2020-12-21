@@ -8,43 +8,53 @@
           <!-- <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p> -->
         </div>
 
-        <div class="row">
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in">
-            <div class="icon-box iconbox-blue">
+        <div class="row justify-content-center text-center">
+          <div class="mb-4 justify-content-center col-lg-4 col-md-6 col-sm-12 col-xs-12 d-flex align-items-stretch aos-init aos-animate" data-aos="zoom-in" data-aos-delay="300">
+            <div style="width:100%; height: 100%;" class="icon-box iconbox-blue">
               <div class="icon">
-                <i class="bx bx-home"></i>
+                <i class="bx bxs-school"></i>
               </div>
-              <h4><a href="<?=base_url('institution')?>">Institution</a></h4>
-              <p>Ummusshabri Institution</p>
+              <h4><a href="<?=base_url('foundation')?>">Ummusshabri Kendari Foundation</a></h4>
+              <p>Ummusshabri Kendari Foundation</p>
             </div>
           </div>
 
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch aos-init aos-animate mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
-            <div class="icon-box iconbox-pink">
+          <div class="mb-4 justify-content-center col-lg-4 col-md-6 col-sm-12 col-xs-12 d-flex align-items-stretch aos-init aos-animate" data-aos="zoom-in" data-aos-delay="300">
+            <div style="width:100%; height: 100%;" class="icon-box iconbox-teal">
+              <div class="icon">
+                <i class="bx bx-home-smile"></i>
+              </div>
+              <h4><a href="<?=base_url('ece')?>">ECE of Ummusshabri Kendari</a></h4>
+              <p>Early Childhood Education</p>
+            </div>
+          </div>
+
+          <div class="mb-4 justify-content-center col-lg-4 col-md-6 col-sm-12 col-xs-12 d-flex align-items-stretch aos-init aos-animate" data-aos="zoom-in" data-aos-delay="300">
+            <div style="width:100%; height: 100%;" class="icon-box iconbox-pink">
               <div class="icon">
                 <i class="bx bx-home-circle"></i>
               </div>
-              <h4><a href="<?=base_url('mi')?>">MI</a></h4>
+              <h4><a href="<?=base_url('mi')?>">MI Pesri Kendari</a></h4>
               <p>Madrasah Ibtidaiyah</p>
             </div>
           </div>
 
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch aos-init aos-animate mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="300">
-            <div class="icon-box iconbox-orange ">
+          <div class="mb-4 justify-content-center col-lg-4 col-md-6 col-sm-12 col-xs-12 d-flex align-items-stretch aos-init aos-animate" data-aos="zoom-in" data-aos-delay="300">
+            <div style="width:100%; height: 100%;" class="icon-box iconbox-orange ">
               <div class="icon">
-                <i class="bx bxs-school"></i>
+                <i class="bx bx-home"></i>
               </div>
-              <h4><a href="<?=base_url('mts')?>">MTS</a></h4>
+              <h4><a href="<?=base_url('mts')?>">MTS Pesri Kendari</a></h4>
               <p>Madrasah Tsanawiyah</p>
             </div>
           </div>
 
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch aos-init aos-animate mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
-            <div class="icon-box iconbox-yellow">
+          <div class="mb-4 justify-content-center col-lg-4 col-md-6 col-sm-12 col-xs-12 d-flex align-items-stretch aos-init aos-animate" data-aos="zoom-in" data-aos-delay="300">
+            <div style="width:100%; height: 100%;" class="icon-box iconbox-yellow">
               <div class="icon">
-                <i class="bx bx-home-smile"></i>
+                <i class="bx bx-home-heart"></i>
               </div>
-              <h4><a href="<?=base_url('ma')?>">MA</a></h4>
+              <h4><a href="<?=base_url('ma')?>">MA Pesri Kendari</a></h4>
               <p>Madrasah Aliyah</p>
             </div>
           </div>
@@ -110,6 +120,12 @@
               <?php
                   }
               ?>
+
+              <div class="blog-pagination">
+                <div class="read-more text-right">
+                    <a class="btn btn-primary" style="background-color: #68A4C4; border: #68A4C4;" href="<?=base_url('foundation/news')?>">More...</a>
+                </div>
+              </div>
 
           </div><!-- End blog entries list -->
           

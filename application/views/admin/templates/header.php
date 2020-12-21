@@ -142,7 +142,7 @@
                                         <img alt="Image placeholder" src="<?=base_url()?>back/assets/img/theme/user.jpg">
                                     </span>
                                     <div class="media-body ml-2 d-none d-lg-block">
-                                        <span class="mb-0 text-sm  font-weight-bold"><?=$_SESSION['username']?></span>
+                                        <span class="mb-0 text-sm  font-weight-bold"><?=$this->session->userdata('username')?></span>
                                     </div>
                                 </div>
                             </a>
@@ -199,7 +199,7 @@
                                         <div class="row">
                                             <div class="col">
                                                 <h5 class="card-title text-uppercase text-muted mb-0">Foto Galery</h5>
-                                                <span class="h2 font-weight-bold mb-0"><?=@$gamery ? $gamery : 0?></span>
+                                                <span class="h2 font-weight-bold mb-0"><?=@$galery ? $galery : 0?></span>
                                             </div>
                                             <div class="col-auto">
                                                 <div class="icon icon-shape bg-warning text-white rounded-circle shadow">

@@ -46,6 +46,9 @@
         <script type="text/javascript" src="<?=base_url()?>back/node_modules/simple-uploader/dist/uploader.js"></script>
         <script type="text/javascript" src="<?=base_url()?>back/node_modules/simditor/lib/simditor.js"></script>
         
+        <!-- ckditor5 -->
+        <script src="https://cdn.ckeditor.com/ckeditor5/23.1.0/classic/ckeditor.js"></script>
+
         <!-- by node_modules -->
         <?php
             if(isset($node_modules)) {

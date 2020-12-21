@@ -5,7 +5,7 @@ class Profile extends CI_Controller {
 
 	public function __construct() {
 		parent::__construct();
-		if(!isset($_SESSION['auth_login'])) {
+		if(!$this->session->userdata('auth_login')) {
 			redirect('admin/Auth');
 		}
 		$this->load->model('admin/Berita_model');
@@ -27,7 +27,7 @@ class Profile extends CI_Controller {
 		if($type == 'list') {
 			$data					= $this->__getPagination('articles');
 			$data['head'] 			= 'Profile';
-			$data['content']		= 'Berisi profile Ummusabri Kendari.';
+			$data['content']		= 'Berisi profile Ummusshabri Kendari.';
 			$data['title']			= 'Profile';
 			$data['node_modules']	= 'sweetalert2/dist/sweetalert2.all.min.js';
 			$data['script']			= 'admin/profile/profile-list.js'; 
@@ -36,7 +36,7 @@ class Profile extends CI_Controller {
 		}else if($type == 'update') {
 			$data['data'] 		= $this->Berita_model->getDetail('articles', $id);
 			$data['head'] 		= 'Profile';
-			$data['content']	= 'Berisi profile Ummusabri Kendari.';
+			$data['content']	= 'Berisi profile Ummusshabri Kendari.';
 			$data['title']		= 'Profile';
 			$data['slug']		= 'profile';
 			$data['script']		= 'admin/profile/profile-update.js'; 
@@ -49,11 +49,9 @@ class Profile extends CI_Controller {
 			];
 
 			if(empty($_FILES['file']['name'])) {
-				$slug = url_title($this->input->post('title'), 'dash', true).'-'.time();
 				$data	= [
 					'title'			=> $this->input->post('title'),
 					'content'		=> $this->input->post('content'),
-					'slug'			=> $slug,
 					'updated_at'	=> date('Y-m-d'),
 					'updated_by'	=> @$this->session->userdata('id')
 				];
@@ -77,12 +75,10 @@ class Profile extends CI_Controller {
 					if(file_exists('./uploads/images/thumbs/'.$details_data[0]['file'])) {
 						unlink('./uploads/images/thumbs/'.$details_data[0]['file']);
 					}
-					$slug = url_title($this->input->post('title'), 'dash', true).'-'.time();
 					$data	= [
 						'title'			=> $this->input->post('title'),
 						'content'		=> $this->input->post('content'),
 						'file'			=> $file['file_name'],
-						'slug'			=> $slug,
 						'updated_at'	=> date('Y-m-d'),
 						'updated_by'	=> @$this->session->userdata('id')
 					];

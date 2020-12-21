@@ -6,15 +6,15 @@
                     <h1><?=$head?></h1>
                 </div>
                 <div class="card-body">
-                    <?php
-                        if(isset($_SESSION['flash_message'])) {
-                    ?>
-                    <div class="alert alert-<?=@$_SESSION['status']?>" role="alert">
-                        <?=@$_SESSION['message']?>
-                    </div>
-                    <?php
-                        }
-                    ?>
+                <?php
+                if($this->session->userdata('flash_message')) {
+              ?>
+              <div class="alert alert-<?=$this->session->userdata('status')?>" role="alert">
+                <?=$this->session->userdata('message')?>
+              </div>
+              <?php
+                }
+              ?>
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="form-group">

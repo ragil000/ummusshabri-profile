@@ -5,7 +5,7 @@ class Berita_model extends CI_Model{
 
     public function getContentData($table, $type = 'news', $limit, $start, $level = NULL){
                       $this->db->limit($limit, $start);
-                      if($level){
+                      if($level && $level != 'foundation'){
                         $this->db->where('level', $level);
                       }
                       $this->db->order_by('created_at', 'DESC');
@@ -14,7 +14,7 @@ class Berita_model extends CI_Model{
     }
 
     public function getTotalData($table, $type, $level = NULL){
-      if($level){
+      if($level && $level != 'foundation'){
         $this->db->where('level', $level);
       }
       $results    = $this->db->get_where($table, ['type' => $type])->num_rows();
@@ -23,7 +23,7 @@ class Berita_model extends CI_Model{
 
     public function getPopularNews($limit, $level = NULL){
                       $this->db->limit($limit, 0);
-                      if($level){
+                      if($level && $level != 'foundation'){
                         $this->db->where('level', $level);
                       }
                       $this->db->order_by('views', 'DESC');
@@ -33,7 +33,7 @@ class Berita_model extends CI_Model{
 
     public function getRandomNews($limit, $level = NULL){
                       $this->db->limit($limit, 0);
-                      if($level){
+                      if($level && $level != 'foundation'){
                         $this->db->where('level', $level);
                       }
                       $this->db->order_by('rand()');
@@ -43,7 +43,7 @@ class Berita_model extends CI_Model{
 
     public function getNewNews($limit, $level = NULL){
                       $this->db->limit($limit, 0);
-                      if($level){
+                      if($level && $level != 'foundation'){
                         $this->db->where('level', $level);
                       }
                       $this->db->order_by('created_at', 'DESC');
@@ -53,7 +53,7 @@ class Berita_model extends CI_Model{
 
     public function getGalery($limit, $level = NULL){
               $this->db->limit($limit, 0);
-              if($level){
+              if($level && $level != 'foundation'){
                 $this->db->where('level', $level);
               }
               $this->db->order_by('created_at', 'DESC');

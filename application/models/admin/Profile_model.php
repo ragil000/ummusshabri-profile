@@ -7,8 +7,8 @@ class Profile_model extends CI_Model{
                       $this->db->limit($limit, $start);
                       $this->db->order_by('created_at', 'DESC');
                       $where = ['type' => $type];
-                      if(@$this->session->levelNama != 'yayasan'){
-                        $where['level'] = @$this->session->levelNama;
+                      if($this->session->userdata('levelNama') != 'foundation') {
+                        $this->db->where('level', $this->session->userdata('levelNama'));
                       }
         $results    = $this->db->get_where($table, $where)->result_array();
         return $results;

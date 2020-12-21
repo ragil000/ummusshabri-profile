@@ -432,7 +432,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .hero-rmy {
   background: linear-gradient(45deg, rgba(87, 58, 250, 0.679) 0%, rgba(114, 15, 214, 0.529) 100%), url("../img/hero-um-bg.jpg") center center no-repeat !important;
-  background-size: 100% auto !important;
+  background-size: 100% 100vh !important;
 }
 
 

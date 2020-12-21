@@ -13,7 +13,7 @@ class Berita extends CI_Controller {
 		$data['popular_news']	= $this->Berita_model->getPopularNews(5);
 		$data['popular_news_level']	= $this->Berita_model->getPopularNews(5, $level);
 		$data['detail']	= true;
-
+		$data['is_news'] = true;
 		if($level){
 			$data['levelLink'] = $level.'/';
 		}
@@ -27,7 +27,7 @@ class Berita extends CI_Controller {
 		$data					= $this->__getContentData($level, 'detail', $slug);
 		$data['random_news'] 		= $this->Berita_model->getRandomNews(3);
 		$data['detail']	= true;
-
+		$data['is_news'] = true;
 		if($level){
 			$data['levelLink'] = $level.'/';
 		}

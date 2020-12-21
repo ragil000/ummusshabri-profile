@@ -6,9 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="Website resmi Litbang kabupaten Bombana, Sulawesi Tenggara">
   <meta name="author" content="Creative Tim">
-  <title>Netlitbang Bombana | Halaman Login</title>
+  <title>Ummusshabri Kendari | Halaman Login</title>
   <!-- Favicon -->
-  <link href="<?=base_url('back')?>/assets/img/brand/favicon.png" rel="icon" type="image/png">
+  <link href="<?=base_url('back')?>/assets/img/brand/logo-pesri.png" rel="icon" type="image/png">
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
   <!-- Icons -->
@@ -25,7 +25,7 @@
       <div class="container px-4">
         <a class="navbar-brand" href="../index.html">
           <!-- <img src="<?=base_url('back')?>/assets/img/brand/white.png" /> -->
-          <h2 class="text-white">Netlitbang</h2>
+          <h2 class="text-white">Ummusshabri Kendari</h2>
         </a>
       </div>
     </nav>
@@ -44,10 +44,10 @@
           <div class="card bg-secondary shadow border-0">
             <div class="card-body px-lg-5 py-lg-5">
               <?php
-                if(isset($_SESSION['flash_message'])) {
+                if($this->session->userdata('flash_message')) {
               ?>
               <div class="alert alert-danger" role="alert">
-                <?=@$_SESSION['message']?>
+                <?=$this->session->userdata('message')?>
               </div>
               <?php
                 }

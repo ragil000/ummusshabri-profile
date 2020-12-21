@@ -16,13 +16,13 @@
             </div>
             <div class="table-responsive">
               <?php
-                if(isset($_SESSION['flash_message'])) {
+                  if($this->session->userdata('flash_message')) {
               ?>
-              <div class="alert alert-<?=@$_SESSION['status']?>" role="alert">
-                <?=@$_SESSION['message']?>
+              <div class="alert alert-<?=$this->session->userdata('status')?>" role="alert">
+                  <?=$this->session->userdata('message')?>
               </div>
               <?php
-                }
+                  }
               ?>
               <table class="table align-items-center table-flush">
                 <thead class="thead-light">

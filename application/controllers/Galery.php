@@ -8,7 +8,7 @@ class Galery extends CI_Controller {
 		$this->load->model('Berita_model');
 	}
 
-	public function index($level = 'institution')	{
+	public function index($level = 'foundation')	{
 		$data					= $this->__getContentData($level, 'index');
 		$data['popular_news']	= $this->Berita_model->getPopularNews(5);
 		$data['galery']			= true;
@@ -36,9 +36,9 @@ class Galery extends CI_Controller {
 	protected function __getContentData($level = NULL, $function = 'index') {
 		if($function == 'index') {
 				$data				= $this->__getPagination($level, 'articles');
-				$data['head'] 			= ($level != 'institution' ? strtoupper($level) : 'Institution').' Galery';
-				$data['content']		= 'Documentation photo collection of '.($level != 'institution' ? strtoupper($level) : 'Institution').' activities.';
-				$data['title']			= ($level != 'institution' ? strtoupper($level) : 'Institution').' Galery';
+				$data['head'] 			= ($level != 'foundation' ? strtoupper($level) : 'Ummusshanri Kendari Foundation').' Galery';
+				$data['content']		= 'Documentation photo collection of '.($level != 'foundation' ? strtoupper($level) : 'Ummusshanri Kendari Foundation').' activities.';
+				$data['title']			= ($level != 'foundation' ? strtoupper($level) : 'Ummusshanri Kendari Foundation').' Galery';
 				$data['link_map']	= [
 					[
 						'title'	=> 'home',
@@ -51,31 +51,10 @@ class Galery extends CI_Controller {
 				];
 				
 				return $data;
-		}else if($function == 'detail') {
-			$data['results']	= $this->Berita_model->getDetailData('articles', $slug);
-			$data['head'] 			= 'News';
-			$data['content']		= 'Information';
-			$data['title']			= 'News';
-			$data['link_map']	= [
-				[
-					'title'	=> 'home',
-					'slug'	=> base_url()
-				],
-				[
-					'title'	=> 'news',
-					'slug'	=> $level ? base_url($level.'/news') : base_url('news')
-				],
-				[
-					'title'	=> 'detail',
-					'slug'	=> NULL
-				]
-			];
-
-			return $data;
 		}
 	}
 
-	protected function __getPagination($level = NULL, $table, $per_page = 10) {
+	protected function __getPagination($level = NULL, $table, $per_page = 9) {
 		// Pagination confoguration
 		$config['base_url'] 	= base_url($level.'/galery/'); //site url
 		$config['total_rows'] 	= $this->Berita_model->getTotalData($table, 'images', $level); //total row

@@ -19,8 +19,8 @@ class Auth extends CI_Controller {
         $check      = $this->Auth_model->checkAccount($email, $password);
         if($check->num_rows() > 0) {
             $row    = $check->result();
-            $levelNama = ['', 'institution', 'mi', 'mts', 'ma'];
-            $levelWelcome = ['', 'Yayasan', 'Madrasah Ibtidaiyah', 'Madrasah Tsanawiyah', 'Madrasah Aliyah'];
+            $levelNama = ['', 'foundation', 'ece', 'mi', 'mts', 'ma'];
+            $levelWelcome = ['', 'Yayasan', 'Pendidikan Anak Usia Dini' ,'Madrasah Ibtidaiyah', 'Madrasah Tsanawiyah', 'Madrasah Aliyah'];
             $this->session->set_userdata([
               'auth_login' => TRUE, 
               'id' => $row[0]->id, 

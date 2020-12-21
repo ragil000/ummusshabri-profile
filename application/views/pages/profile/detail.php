@@ -44,7 +44,6 @@
                                 <li class="d-flex align-items-center"><i class="icofont-wall-clock"></i> <a href="#"><time datetime="<?=date('Y-m-d')?>"><?=_dateShortID($results[0]['created_at'])?></time></a></li>
                                 </ul>
                             </div>
-
                             <div class="entry-content">
                                 <p><?=$results[0]['content']?></p>
                             </div>
@@ -71,4 +70,23 @@
     <script>
         $('.parent-menu').removeClass('active');
         $('#parent-3').addClass('active');
+        
+        let youtubeEmbedUrl = []
+
+        let oembed = $('oembed')
+        for(let i = 0; i < oembed.length; i++) {
+            let url = $(oembed[i]).attr('url')
+            let path = url.replace('https://youtu.be/', '')
+            let youtubeEmbed = '<div class="row justify-content-center">'+
+                                '<div class="col-12 text-center">'+
+                                    '<iframe style="width: 50%; height: 50vh;" src="https://www.youtube.com/embed/'+path+'"></iframe>'+
+                                '</div>'+
+                            '</div>'
+            youtubeEmbedUrl.push(youtubeEmbed)
+        }
+        
+        let figure = $('figure')
+        for(let i = 0; i < figure.length; i++) {
+            $(figure[i]).replaceWith(youtubeEmbedUrl[i])
+        }
     </script>

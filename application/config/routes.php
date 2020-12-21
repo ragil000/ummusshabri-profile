@@ -58,39 +58,55 @@ $route['admin']                                 = 'admin/Auth/index';
 $route['admin/dashboard']                       = 'admin/dashboard/index';
 
 // new ummusabri
-// $route['(:any)/litbang/(:any)']          = 'Berita/index/$1/$2';
-$route['institution']    = 'Home/index/institution';
-$route['institution/galery']    = 'Galery/index/institution';
-$route['institution/profile']    = 'Profile/detail/institution';
-$route['institution/news']    = 'Berita/index/institution';
-$route['institution/news/detail/(:any)']    = 'Berita/detail/institution/$1';
+$route['foundation']    = 'Home/index/foundation';
+$route['foundation/galery']    = 'Galery/index/foundation';
+$route['foundation/galery/(:num)']    = 'Galery/index/foundation/$1';
+$route['foundation/profile']    = 'Profile/detail/foundation';
+$route['foundation/news']    = 'Berita/index/foundation';
+$route['foundation/news/(:num)']    = 'Berita/index/foundation/$1';
+$route['foundation/news/detail/(:any)']    = 'Berita/detail/foundation/$1';
+
+$route['ece']    = 'Home/index/ece';
+$route['ece/galery']    = 'Galery/index/ece';
+$route['ece/galery/(:num)']    = 'Galery/index/ece/$1';
+$route['ece/profile']    = 'Profile/detail/ece';
+$route['ece/news']    = 'Berita/index/ece';
+$route['ece/news/(:num)']    = 'Berita/index/ece/$1';
+$route['ece/news/detail/(:any)']    = 'Berita/detail/ece/$1';
 
 $route['mi']    = 'Home/index/mi';
 $route['mi/galery']    = 'Galery/index/mi';
+$route['mi/galery/(:num)']    = 'Galery/index/mi/$1';
 $route['mi/profile']    = 'Profile/detail/mi';
 $route['mi/news']    = 'Berita/index/mi';
+$route['mi/news/(:num)']    = 'Berita/index/mi/$1';
 $route['mi/news/detail/(:any)']    = 'Berita/detail/mi/$1';
 
 $route['mts']    = 'Home/index/mts';
 $route['mts/galery']    = 'Galery/index/mts';
+$route['mts/galery/(:num)']    = 'Galery/index/mts/$1';
 $route['mts/profile']    = 'Profile/detail/mts';
 $route['mts/news']    = 'Berita/index/mts';
+$route['mts/news/(:num)']    = 'Berita/index/mts/$1';
 $route['mts/news/detail/(:any)']    = 'Berita/detail/mts/$1';
 
 $route['ma']    = 'Home/index/ma';
 $route['ma/galery']    = 'Galery/index/ma';
+$route['ma/galery/(:num)']    = 'Galery/index/ma/$1';
 $route['ma/profile']    = 'Profile/detail/ma';
 $route['ma/news']    = 'Berita/index/ma';
+$route['ma/news/(:num)']    = 'Berita/index/ma/$1';
 $route['ma/news/detail/(:any)']    = 'Berita/detail/ma/$1';
 // end
 
 // new admin
-$route['admin/news/create']           = 'admin/Berita/create';
-$route['admin/news/update/(:num)']    = 'admin/Berita/update/$1';
-$route['admin/news/put/(:num)']       = 'admin/Berita/put/$1';
-$route['admin/news']           = 'admin/Berita/index';
-$route['admin/news/post']                  = 'admin/Berita/post';
-$route['admin/news/delete/(:num)']                  = 'admin/Berita/delete/$1';
+$route['admin/news/create']             = 'admin/Berita/create';
+$route['admin/news/update/(:num)']      = 'admin/Berita/update/$1';
+$route['admin/news/put/(:num)']         = 'admin/Berita/put/$1';
+$route['admin/news']                    = 'admin/Berita/index';
+$route['admin/news/(:num)']             = 'admin/Berita/index/$1';
+$route['admin/news/post']               = 'admin/Berita/post';
+$route['admin/news/delete/(:num)']      = 'admin/Berita/delete/$1';
 
 $route['admin/profile/update/(:num)']    = 'admin/Profile/update/$1';
 $route['admin/profile/put/(:num)']       = 'admin/Profile/put/$1';

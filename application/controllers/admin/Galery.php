@@ -5,7 +5,7 @@ class Galery extends CI_Controller {
 
 	public function __construct() {
 		parent::__construct();
-		if(!isset($_SESSION['auth_login'])) {
+		if(!$this->session->userdata('auth_login')) {
 			redirect('admin/Auth');
 		}
 		$this->load->model('admin/Galery_model');

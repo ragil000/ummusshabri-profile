@@ -17,6 +17,7 @@
         ?>
           <div class="col-lg-4 col-md-6 portfolio-item filter-app">
             <div class="portfolio-wrap">
+              <span class="badge badge-success" style="position: relative; top: 25px; left: 5px;"><?=strtoupper($value['level'])?></span>
               <img src="<?=base_url('uploads/images/smalls/').$value['file']?>" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4><?=$value['title']?></h4>
@@ -51,7 +52,7 @@
 
                 <div class="row">
 
-                    <div class="col-lg-8 entries">
+                    <div class="col-lg-12 entries">
                         <div class="blog-pagination">
                             <?=$pagination?>
                         </div> 

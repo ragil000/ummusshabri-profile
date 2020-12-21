@@ -6,8 +6,8 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
   <title>Ummusshabri Kendari</title>
-  <meta content="Sholih, Islamist, Populist, Archievers, Socialist & Environmentally Friendly" name="descriptison">
-  <meta content="sekolah islam terpadu, sekolah islam, pesantren ummusabri, ummusabri, ummu sabri, ummusabri kendari, ummu sabri kendari, mi, mts, ma" name="keywords">
+  <meta content="Integrated Islamic School of Ummusabri Institution | Sekolah Islam Terpadu Yayasan Ummusshabri Kendari" name="description">
+  <meta content="sekolah islam terpadu, sekolah islam, pesantren ummusshabri, ummusshabri, ummussabri, ummusabri, umusabri, ummu sabri, Ummusshabri kendari, ummu sabri kendari, mi, mts, ma" name="keywords">
 
   <!-- Favicons -->
   <link href="<?=base_url('template/awal')?>/assets/img/logo-pesri.png" rel="icon">
@@ -53,11 +53,28 @@
   ?>
     <div class="container-fluid">
 
+    <?php
+      $logo_text = 'Ummusshabri Kendari';
+      if(@$levelLink) {
+        if(@$is_news) {
+          $logo_text = substr($levelLink, 0, -1) == 'foundation' ? 'Ummusshabri News' : strtoupper(substr($levelLink, 0, -1)).' News';
+        }else {
+            if(substr($levelLink, 0, -1) == 'ece') {
+                $logo_text = 'PAUD of Ummusshabri';
+            }else if(substr($levelLink, 0, -1) == 'foundation') {
+                $logo_text = 'Ummusshabri Kendari';
+            }else {
+                $logo_text = strtoupper(substr($levelLink, 0, -1)).' of Ummusshabri';
+            }
+        }
+      }
+    ?>
+
       <div class="row justify-content-center">
         <div class="col-xl-9 d-flex align-items-center">
           <!-- Uncomment below if you prefer to use an image logo -->
           <a href="<?=base_url()?>" class="logo mr-3"><img src="<?=base_url('template/awal')?>/assets/img/logo-pesri.png" alt="" class="img-fluid"></a>
-          <h3 class="logo mr-auto"><a href="<?=base_url(@$levelLink | '')?>"><?=@$levelLink ? strtoupper(substr($levelLink, 0, -1)) : 'Ummusabri'?></a></h3>
+          <h3 class="logo mr-auto"><a href="<?=@$levelLink ? base_url($levelLink) : base_url()?>"><?=$logo_text?></a></h3>
 
           <nav class="nav-menu d-none d-lg-block">
             <ul>
@@ -71,23 +88,25 @@
               <li id="parent-4" class="parent-menu"><a href="<?=base_url($levelLink.'galery')?>">Galery</a></li>
               <li id="parent-5" class="drop-down parent-menu"><a href="">Websites</a>
                 <ul>
-                  <li><a href="<?=base_url('institution')?>">Ummusabri Institution</a></li>
-                  <li><a href="<?=base_url('mi')?>">Madrasah Ibtidaiyah</a></li>
-                  <li><a href="<?=base_url('mts')?>">Madrasah Tsanawiyah</a></li>
-                  <li><a href="<?=base_url('ma')?>">Madrasah Aliyah</a></li>
+                  <li><a href="<?=base_url('foundation')?>">Ummusshabri Kendari Faundation</a></li>
+                  <li><a href="<?=base_url('ece')?>">Early Childhood Education</a></li>
+                  <li><a href="<?=base_url('mi')?>">Elementary School</a></li>
+                  <li><a href="<?=base_url('mts')?>">Junior High School</a></li>
+                  <li><a href="<?=base_url('ma')?>">Senior High School</a></li>
                 </ul>
               </li>
               <?php
                 }else {
               ?>
               <li id="parent-1" class="parent-menu active"><a href="<?=base_url()?>">Home</a></li>
-              <li id="parent-2" class="parent-menu"><a href="<?=base_url('news')?>">News</a></li>
+              <!-- <li id="parent-2" class="parent-menu"><a href="<?=base_url('news')?>">News</a></li> -->
               <li id="parent-3" class="drop-down parent-menu"><a href="">Profiles</a>
                 <ul>
-                  <li><a href="<?=base_url('institution/profile')?>">Ummusabri Institution</a></li>
-                  <li><a href="<?=base_url('mi/profile')?>">Madrasah Ibtidaiyah</a></li>
-                  <li><a href="<?=base_url('mts/profile')?>">Madrasah Tsanawiyah</a></li>
-                  <li><a href="<?=base_url('ma/profile')?>">Madrasah Aliyah</a></li>
+                  <li><a href="<?=base_url('foundation/profile')?>">Ummusshabri Kendari Faundation</a></li>
+                  <li><a href="<?=base_url('ece/profile')?>">Early Childhood Education</a></li>
+                  <li><a href="<?=base_url('mi/profile')?>">Elementary School</a></li>
+                  <li><a href="<?=base_url('mts/profile')?>">Junior High School</a></li>
+                  <li><a href="<?=base_url('ma/profile')?>">Senior High School</a></li>
                 </ul>
               </li>
               <?php
@@ -120,7 +139,7 @@
         <div class="row">
 
           <div class="col-lg-3 col-md-6 footer-contact">
-            <h3>Ummusabri Kendari</h3>
+            <h3>Ummusshabri Kendari</h3>
             <p>
               Bende, Kadia District, <br>
               Kendari City,<br>
@@ -134,26 +153,28 @@
             <h4>Websites Links</h4>
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="<?=base_url()?>">Base Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="<?=base_url('institution')?>">Institution Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="<?=base_url('mi')?>">MI Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="<?=base_url('mts')?>">MTS Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="<?=base_url('ma')?>">MA Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="<?=base_url('foundation')?>">Ummusshabri Kendari Foundation Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="<?=base_url('ece')?>">PAUD of Ummusshabri Kendari Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="<?=base_url('mi')?>">MI Pesri Kendari Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="<?=base_url('mts')?>">MTS Pesri Kendari Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="<?=base_url('ma')?>">MA Pesri Kendari Home</a></li>
             </ul>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Profiles</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="<?=base_url('institution/profile')?>">Institution Profile</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="<?=base_url('mi/profile')?>">MI Profile</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="<?=base_url('mts/profile')?>">MTS Profile</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="<?=base_url('ma/profile')?>">MA Profile</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="<?=base_url('foundation/profile')?>">Ummusshabri Kendari Foundation Profile</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="<?=base_url('ece/profile')?>">PAUD of Ummusshabri Kendari Profile</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="<?=base_url('mi/profile')?>">MI Pesri Kendari Profile</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="<?=base_url('mts/profile')?>">MTS Pesri Kendari Profile</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="<?=base_url('ma/profile')?>">MA Pesri Kendari Profile</a></li>
             </ul>
           </div>
 
           <div class="col-lg-4 col-md-6 footer-newsletter">
             <h4>Our Priority</h4>
-            <p>Sholih, Islamist, Populist, Archievers, Socialist & Environmentally Friendly</p>
+            <p>Sholih, Islamist, Populist, Accomplished, Socialist</p>
             <!-- <form action="" method="post">
               <input type="email" name="email"><input type="submit" value="Subscribe">
             </form> -->
@@ -179,11 +200,11 @@
           </div>
         </div>
         <div class="social-links text-center text-md-right pt-3 pt-md-0">
-          <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-          <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-          <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-          <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-          <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+          <a target="_blank" href="https://www.youtube.com/results?search_query=ummusshabri+tv" class="youtube"><i class="bx bxl-youtube"></i></a>
+          <a target="_blank" href="https://web.facebook.com/Yayasan-Ummusshabri-100442794973171/?view_public_for=100442794973171" class="facebook"><i class="bx bxl-facebook"></i></a>
+          <a target="_blank" href="https://www.instagram.com/yayasanummusshabri/" class="instagram"><i class="bx bxl-instagram"></i></a>
+          <!-- <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+          <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a> -->
         </div>
       </div>
 

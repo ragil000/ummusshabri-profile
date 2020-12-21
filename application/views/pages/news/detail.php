@@ -100,4 +100,23 @@
     <script>
         $('.parent-menu').removeClass('active');
         $('#parent-2').addClass('active');
+
+        let youtubeEmbedUrl = []
+
+        let oembed = $('oembed')
+        for(let i = 0; i < oembed.length; i++) {
+            let url = $(oembed[i]).attr('url')
+            let path = url.replace('https://youtu.be/', '')
+            let youtubeEmbed = '<div class="row justify-content-center">'+
+                                '<div class="col-12 text-center">'+
+                                    '<iframe style="width: 50%; height: 50vh;" src="https://www.youtube.com/embed/'+path+'"></iframe>'+
+                                '</div>'+
+                            '</div>'
+            youtubeEmbedUrl.push(youtubeEmbed)
+        }
+        
+        let figure = $('figure')
+        for(let i = 0; i < figure.length; i++) {
+            $(figure[i]).replaceWith(youtubeEmbedUrl[i])
+        }
     </script>

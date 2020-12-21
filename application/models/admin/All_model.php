@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class All_model extends CI_Model{
 
     public function getNews(){
-                if($this->session->userdata('levelNama') != 'institution') {
+                if($this->session->userdata('levelNama') != 'foundation') {
                     $this->db->where('level', $this->session->userdata('levelNama'));
                 }
                 $this->db->where('YEAR(`created_at`)', date('Y'));
@@ -12,7 +12,7 @@ class All_model extends CI_Model{
     }
 
     public function getGalery(){
-        if($this->session->userdata('levelNama') != 'institution') {
+        if($this->session->userdata('levelNama') != 'foundation') {
             $this->db->where('level', $this->session->userdata('levelNama'));
         }
         $this->db->where('YEAR(`created_at`)', date('Y'));
@@ -20,7 +20,7 @@ class All_model extends CI_Model{
     }
 
     public function getViews(){
-        if($this->session->userdata('levelNama') != 'institution') {
+        if($this->session->userdata('levelNama') != 'foundation') {
             $this->db->where('level', $this->session->userdata('levelNama'));
         }
         $this->db->where('YEAR(`created_at`)', date('Y'));

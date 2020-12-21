@@ -22,54 +22,11 @@ class Profile extends CI_Controller {
 	}
 
 	protected function __getContentData($level = NULL, $function = 'index', $slug = NULL) {
-		if($function == 'index') {
-				$data				= $this->__getPagination($content, 'articles');
-				$data['head'] 			= 'Artikel dan Berita';
-				$data['content']		= 'Informasi artikel dan berita Litbang kabupaten Bombana.';
-				$data['title']			= 'Artikel dan Berita';
-				$data['link_map']	= [
-					[
-						'title'	=> 'beranda',
-						'slug'	=> base_url()
-					],
-					[
-						'title'	=> 'jurnal',
-						'slug'	=> NULL
-					],
-					[
-						'title'	=> 'artikel dan berita',
-						'slug'	=> NULL
-					],
-				];
-				$data['side_submenu']	= [
-					[
-						'title'	=> 'SOP Kelitbangan',
-						'slug'	=> base_url('journal/sop-kelitbangan'),
-						'total'	=> NULL
-					],
-					[
-						'title'	=> 'RIK Kab. Bombana',
-						'slug'	=> base_url('journal/rik-bombana'),
-						'total' => NULL
-					],
-					[
-						'title'	=> 'Agenda Kegiatan',
-						'slug'	=> base_url('journal/agenda-kegiatan'),
-						'total'	=> $this->Journal_model->getTotalData('agenda-kegiatan', 'articles')
-					],
-					[
-						'title'	=> 'Rekomendasi',
-						'slug'	=> base_url('journal/rekomendasi'),
-						'total' => $this->Journal_model->getTotalData('rekomendasi', 'articles')
-					]
-				];
-	
-				return $data;
-		}else if($function == 'detail') {
+		if($function == 'detail') {
 			$data['results']	= $this->Berita_model->getProfileData('articles', $level);
-			$data['head'] 			= ($level != 'institution' ? strtoupper($level) : 'Institution').' Profile';
+			$data['head'] 			= ($level != 'foundation' ? strtoupper($level) : 'Ummusshanri Kendari Foundation').' Profile';
 			$data['content']		= 'Information';
-			$data['title']			= ($level != 'institution' ? strtoupper($level) : 'Institution').' Profile';
+			$data['title']			= ($level != 'foundation' ? strtoupper($level) : 'Ummusshanri Kendari Foundation').' Profile';
 			$data['link_map']	= [
 				[
 					'title'	=> 'home',
