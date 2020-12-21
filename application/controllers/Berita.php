@@ -56,6 +56,13 @@ class Berita extends CI_Controller {
 				return $data;
 		}else if($function == 'detail') {
 			$data['results']	= $this->Berita_model->getDetailData('articles', $slug);
+			$data['seo'] = [
+				'title' => strtolower($data['results'][0]['title']),
+				'description' => _limitText(strtolower(strip_tags($data['results'][0]['content'])), 100),
+				'url' => $data['results'][0]['slug'],
+				'image' => base_url('uploads/images/').$data['results'][0]['file'],
+				'published_time' => $data['results'][0]['created_at']
+			];
 			$data['head'] 			= 'News Detail';
 			$data['content']		= 'Information';
 			$data['title']			= 'News Detail';

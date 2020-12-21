@@ -24,6 +24,13 @@ class Profile extends CI_Controller {
 	protected function __getContentData($level = NULL, $function = 'index', $slug = NULL) {
 		if($function == 'detail') {
 			$data['results']	= $this->Berita_model->getProfileData('articles', $level);
+			$data['seo'] = [
+				'title' => strtolower($data['results'][0]['title']),
+				'description' => _limitText(strtolower(strip_tags($data['results'][0]['content'])), 100),
+				'url' => $data['results'][0]['slug'],
+				'image' => base_url('uploads/images/').$data['results'][0]['file'],
+				'published_time' => $data['results'][0]['created_at']
+			];
 			$data['head'] 			= ($level != 'foundation' ? strtoupper($level) : 'Ummusshanri Kendari Foundation').' Profile';
 			$data['content']		= 'Information';
 			$data['title']			= ($level != 'foundation' ? strtoupper($level) : 'Ummusshanri Kendari Foundation').' Profile';

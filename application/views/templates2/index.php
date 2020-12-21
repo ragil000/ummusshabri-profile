@@ -5,13 +5,44 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Ummusshabri Kendari</title>
-  <meta content="Integrated Islamic School of Ummusabri Institution | Sekolah Islam Terpadu Yayasan Ummusshabri Kendari" name="description">
   <meta content="sekolah islam terpadu, sekolah islam, pesantren ummusshabri, ummusshabri, ummussabri, ummusabri, umusabri, ummu sabri, Ummusshabri kendari, ummu sabri kendari, mi, mts, ma" name="keywords">
 
   <!-- Favicons -->
-  <link href="<?=base_url('template/awal')?>/assets/img/logo-pesri.png" rel="icon">
-  <link href="<?=base_url('template/awal')?>/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link rel="icon" type="image/png" href="<?=base_url('template/awal')?>/assets/img/logo-pesri.png">
+  
+  <!-- SEO -->
+  <?php
+    if(@$seo) {
+  ?>
+  <title><?=strtoupper($seo['title'])?></title>
+  <meta name="description" content="<?=$seo['description']?>">
+  <link rel="image_src" href="<?=$seo['image']?>">
+  <meta name="description" content="<?=$seo['description']?>" />
+  <meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <link rel="canonical" href="<?=base_url('foundation/news/detail/').$seo['url']?>" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="<?=strtoupper($seo['title'])?>" />
+  <meta property="og:description" content="<?=$seo['description']?>" />
+  <meta property="og:url" content="<?=base_url('foundation/news/detail/').$seo['url']?>" />
+  <meta property="og:site_name" content="Ummusshabri Kendari" />
+  <meta property="article:published_time" content="<?=$seo['published_time']?>" />
+  <meta property="og:image" content="<?=$seo['image']?>" />
+  <?php
+    }else {
+  ?>
+  <title>Ummusshabri Kendari</title>
+  <meta content="Integrated Islamic School of Ummusabri Kendari Foundation | Sekolah Islam Terpadu Yayasan Ummusshabri Kendari" name="description">
+  <meta property="og:title" content="Integrated Islamic School of Ummusabri Kendari Foundation">
+  <meta property="og:url" content="https://ummusshabri.sch.id/">
+  <meta property="og:description" content="Integrated Islamic School of Ummusabri Kendari Foundation | Sekolah Islam Terpadu Yayasan Ummusshabri Kendari">
+  <meta property="og:image" content="//ummusshabri.sch.id//assets/img/logo-pesri.png">
+  <meta property="og:type" content="article">
+  <?php
+    }
+  ?>
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
